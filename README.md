@@ -5,7 +5,7 @@ Simple management pack to evenly distribute agents owned by servers within "Agen
 
 1. Import management pack
 2. Create "Agent Fail-Over" resource pools for your Management and Gateway Servers
-3. Chill
+3. 🍺
 
 ## How it works
 
