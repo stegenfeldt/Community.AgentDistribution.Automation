@@ -23,7 +23,7 @@
         <WriteActions>
           <RuleWriteActionItem>
             <WriteActionId>ScriptExecution</WriteActionId>
-            <WriteActionConfig>&lt;ScriptName&gt;Update-SCOMAgentDistribution.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scritps/Update-SCOMAgentDistribution.ps1$&lt;/ScriptBody&gt;&lt;TimeoutSeconds&gt;600&lt;/TimeoutSeconds&gt;</WriteActionConfig>
+            <WriteActionConfig>&lt;ScriptName&gt;Update-SCOMAgentDistribution.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/Update-SCOMAgentDistribution.ps1$&lt;/ScriptBody&gt;&lt;TimeoutSeconds&gt;600&lt;/TimeoutSeconds&gt;</WriteActionConfig>
             <WriteActionType>Windows!Microsoft.Windows.PowerShellWriteAction</WriteActionType>
             <WriteActionTarget />
           </RuleWriteActionItem>
