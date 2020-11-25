@@ -1,0 +1,34 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instancead122e8e2c2b461a804a5ac5069aa36f" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomRule" Version="1.0.0.0">
+      <CustomRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>FailOverPoolAgentDistribution</Id>
+        <DisplayName>Distribute Agents over "Agent Fail-Over" Resource Pools</DisplayName>
+        <Description>Queries SCOM for Resource Pools with an "Agent Fail-Over" prefix and makes sure that agents within it are distributed evenly between the nodes. </Description>
+        <Category>Maintenance</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>SC!Microsoft.SystemCenter.AllManagementServersPool</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <DataSources>
+          <RuleDataSourceItem>
+            <DataSourceId>Scheduler</DataSourceId>
+            <DataSourceConfig>&lt;IntervalSeconds&gt;86400&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;01:05&lt;/SyncTime&gt;</DataSourceConfig>
+            <DataSourceType>System!System.SimpleScheduler</DataSourceType>
+          </RuleDataSourceItem>
+        </DataSources>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <WriteActions>
+          <RuleWriteActionItem>
+            <WriteActionId>ScriptExecution</WriteActionId>
+            <WriteActionConfig>&lt;ScriptName&gt;Update-SCOMAgentDistribution.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scritps/Update-SCOMAgentDistribution.ps1$&lt;/ScriptBody&gt;&lt;TimeoutSeconds&gt;600&lt;/TimeoutSeconds&gt;</WriteActionConfig>
+            <WriteActionType>Windows!Microsoft.Windows.PowerShellWriteAction</WriteActionType>
+            <WriteActionTarget />
+          </RuleWriteActionItem>
+        </WriteActions>
+      </CustomRuleConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

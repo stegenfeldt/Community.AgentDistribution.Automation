@@ -50,5 +50,27 @@
       <PackageToBundle>false</PackageToBundle>
     </ManagementPackReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Rules" />
+    <Folder Include="Scripts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Update-SCOMAgentDistribution.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Rules\Rules.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ManagementPack.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\Rules.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>Rules\Rules.mptg</DependentUpon>
+    </Compile>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VSAC\Microsoft.SystemCenter.OperationsManager.targets" />
 </Project>
