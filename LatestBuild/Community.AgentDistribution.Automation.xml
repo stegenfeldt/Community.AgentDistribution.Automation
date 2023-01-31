@@ -3,7 +3,7 @@
   <Manifest>
     <Identity>
       <ID>Community.AgentDistribution.Automation</ID>
-      <Version>1.0.0.2</Version>
+      <Version>1.0.0.3</Version>
     </Identity>
     <Name>Community.AgentDistribution.Automation</Name>
     <References>
